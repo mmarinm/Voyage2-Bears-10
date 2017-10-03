@@ -10,14 +10,20 @@ class App extends Component {
       message: '',
       messages: []
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    getBotMessage();
+    getBotMessage(msg =>
+      this.setState({ ...this.state, messages: [...this.state.messages, msg] })
+    );
   }
 
   handleChange(event) {
-    this.setState({ message: event.target.value });
+    const newMessage = event.target.value;
+    this.setState(prevState => ({ ...prevState, message: newMessage }));
   }
 
   handleSubmit(e) {
@@ -25,18 +31,21 @@ class App extends Component {
     e.preventDefault();
     //Send the message to the server
     sendMessageToServer(message);
-    this.setState({ message: '' });
+    this.setState(prevState => ({
+      ...prevState,
+      message: ''
+    }));
   }
 
   render() {
     return (
       <div>
         <ul className="messages" />
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit}>
           <input
             type="text"
             value={this.state.message}
-            onChange={this.handleChange.bind(this)}
+            onChange={this.handleChange}
           />
           <button type="submit">Send</button>
         </form>
