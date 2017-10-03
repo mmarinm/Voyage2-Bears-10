@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { encapsMessage } from '../api';
+import { sendMessageToServer, getBotMessage } from '../api';
 import '../App.css';
 
 class App extends Component {
@@ -12,6 +12,10 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    getBotMessage();
+  }
+
   handleChange(event) {
     this.setState({ message: event.target.value });
   }
@@ -20,10 +24,7 @@ class App extends Component {
     const { message } = this.state;
     e.preventDefault();
     //Send the message to the server
-    encapsMessage(message)((err, resp) => {
-      console.log(resp);
-      this.setState({...this.state, messages: [].push(resp)})
-    });
+    sendMessageToServer(message);
     this.setState({ message: '' });
   }
 

@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 io.on('connection', client => {
   client.on('client message', msg => {
     console.log(msg);
-    client.emit('bot message', msg);
+    client.emit('bot message', 'hello from server');
   });
 });
 
