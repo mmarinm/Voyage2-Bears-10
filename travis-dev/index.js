@@ -1,6 +1,4 @@
-const path = require('path');
 const http = require('http');
-const bodyParser = require('body-parser');
 const Express = require('express');
 const SocketIO = require('socket.io');
 
@@ -9,17 +7,10 @@ const app = new Express();
 const server = http.Server(app);
 let io = new SocketIO(server);
 
-const publicPath = path.join(__dirname, '/client');
-
-// define the folder that will be used for static assets
-app.use(Express.static(path.join(publicPath, 'static')));
-app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-
 io.on('connection', client => {
   client.on('client message', msg => {
     console.log(msg);
-    client.emit('bot message', msg);
+    client.emit('bot message', 'hello from server');
   });
 });
 
@@ -38,8 +29,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// universal routing and rendering
-app.get('*', (req, res) => {});
 
 // start the server
 const port = process.env.PORT || 5000;
