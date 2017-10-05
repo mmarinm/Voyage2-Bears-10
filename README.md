@@ -1,1 +1,0 @@
-*Bears team 10*
