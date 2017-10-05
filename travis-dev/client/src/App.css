@@ -43,3 +43,8 @@ form button {
 .messages li:nth-child(odd) {
   background: #eee;
 }
+
+.Message {
+  padding: 10px;
+  border-radius: 18%;
+}

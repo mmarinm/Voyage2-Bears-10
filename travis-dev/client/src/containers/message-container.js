@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Message from '../components/message';
+import { Grid, Row } from 'react-bootstrap';
 
 class MessageContainer extends Component {
   renderMessages = () => {
@@ -18,9 +19,9 @@ class MessageContainer extends Component {
   render() {
     console.log("TEST" + this.props.messages);
     return (
-      <ul>
-        {this.props.messages ? this.renderMessages():''}
-      </ul>
+      <Grid>
+        <Row>{this.props.messages ? this.renderMessages():''}</Row>
+      </Grid>
     );
   }
 }
