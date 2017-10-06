@@ -45,6 +45,7 @@ form button {
 }
 
 .Message {
-  padding: 10px;
+  color: white;
   border-radius: 18%;
+  padding: 10px;
 }

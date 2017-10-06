@@ -1,9 +1,11 @@
 export const UPDATE_MESSAGE = 'UPDATE_MESSAGE';
 
-export function updateMessages(message) {
-  //console.log("MESSAGE = " + message);
+export function updateMessages(messageText) {
   return ({
     type: UPDATE_MESSAGE,
-    payload: message
+    payload: {
+      messageText,
+      userMessage: true
+    }
   });
 }
