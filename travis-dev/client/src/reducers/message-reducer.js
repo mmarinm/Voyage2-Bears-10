@@ -1,4 +1,4 @@
-import { UPDATE_MESSAGE } from '../actions';
+import { UPDATE_MESSAGE, BOT_MESSAGE } from '../actions';
 
 const INITIAL_STATE = {
   messages: [
@@ -20,6 +20,7 @@ const INITIAL_STATE = {
 export default function appState(state=INITIAL_STATE, action) {
   switch(action.type) {
     case UPDATE_MESSAGE:
+    case BOT_MESSAGE:
       return (
         Object.assign({}, state, {
           messages: state.messages.concat(action.payload)

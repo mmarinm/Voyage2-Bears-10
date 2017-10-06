@@ -3,11 +3,11 @@ import { Col } from 'react-bootstrap';
 
 const styleUser = {
   float: 'right',
-  background: 'blue'
+  background: '#cccccc'
 };
 const styleBot = {
   float: 'left',
-  background: 'red'
+  background: '#999999'
 };
 
 const Message = (props) => {
