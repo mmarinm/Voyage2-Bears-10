@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
+import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
 import '../App.css';
 import MessageContainer from '../containers/message-container';
 import { connect } from 'react-redux';
@@ -15,6 +15,15 @@ class App extends Component {
       message: '',
       messages: ['Hi', 'How are you?', 'Fine!']
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    getBotMessage(msg =>
+      this.setState({ ...this.state, messages: [...this.state.messages, msg] })
+    );
   }
 
   // componentDidMount() {
