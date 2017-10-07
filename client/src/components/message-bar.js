@@ -38,14 +38,14 @@ class MessageBar extends Component {
     return (
       <Form inline onSubmit={this.handleSubmit}>
         <Row>
-          <Col xs={9}>
+          <Col xs={9} sm={10} lg={11}>
             <FormControl
               type="text"
               value={this.state.message}
               onChange={this.handleChange}
             />
           </Col>
-          <Col xs={3}>
+          <Col xs={3} sm={2} lg={1}>
             <Button type="submit">Send</Button>
           </Col>
         </Row>
