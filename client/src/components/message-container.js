@@ -16,9 +16,13 @@ class MessageContainer extends Component {
     )
   }
 
+  componentDidUpdate(currentProps, currentState) {
+    window.scrollTo(0, document.body.clientHeight);
+  }
+
   render() {
     return (
-      <Grid className="MessageContainer">
+      <Grid className='MessageContainer'>
         {this.props.messagesState ? this.renderMessages():''}
       </Grid>
     );

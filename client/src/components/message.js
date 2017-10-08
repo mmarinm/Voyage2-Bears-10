@@ -15,8 +15,10 @@ const Message  = (props) =>  {
   const { messageText, isUserMessage, timestamp } = props.data;
   return (
     <Row className='MessageRow'>
-      <div style={{textAlign: isUserMessage ? 'right' : 'left'}}>Sent: {timestamp.toLocaleTimeString()}</div>
-      <h3 className='Message' style={isUserMessage ? styleUser : styleBot}>{messageText}</h3>
+      <div style={{textAlign: isUserMessage ? 'right' : 'left'}}>
+        {isUserMessage ? 'Sent' : 'Received'}: {timestamp.toLocaleTimeString()}
+      </div>
+      <h4 className='Message' style={isUserMessage ? styleUser : styleBot}>{messageText}</h4>
     </Row>
   );
 }

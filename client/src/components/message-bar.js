@@ -27,7 +27,7 @@ class MessageBar extends Component {
     this.setState({ messageText: '' });
 
     this.props.newUserMessage(messageText);
-    getBotMessage(msg => this.props.newBotMessage(msg))
+    getBotMessage(msg => this.props.newBotMessage(msg));
   }
 
   render() {

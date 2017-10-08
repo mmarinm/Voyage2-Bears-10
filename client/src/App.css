@@ -22,6 +22,10 @@ form {
   padding: 10px;
 }
 
+.MessageContainer {
+  margin-bottom: 40px;
+}
+
 .MessageRow {
   margin: 15px 0;
 }
