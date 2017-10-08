@@ -7,8 +7,10 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
+    "buildclient": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*",
+    "test watch": "nodemon --exec \"npm test\""
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,12 @@
     "dotenv": "^4.0.0",
     "express": "^4.16.1",
     "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "mz": "^2.7.0",
+    "supertest": "^3.0.0",
+    "supertest-as-promised": "^4.0.2"
   }
 }
