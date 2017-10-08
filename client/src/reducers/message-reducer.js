@@ -17,15 +17,16 @@ const INITIAL_STATE = {
   ]
 }
 
-export default function appState(state=INITIAL_STATE, action) {
+export default function messageReducer(state=INITIAL_STATE, action) {
   switch(action.type) {
     case UPDATE_MESSAGE:
     case BOT_MESSAGE:
-      return (
-        Object.assign({}, state, {
-          messages: state.messages.concat(action.payload)
-        })
-      )
+      return { ...state, messages: [...state.messages, action.payload] }
+      // return (
+      //   Object.assign({}, state, {
+      //     messages: state.messages.concat(action.payload)
+      //   })
+      // )
     default:
       return state;
   }

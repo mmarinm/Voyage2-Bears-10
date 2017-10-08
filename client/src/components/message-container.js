@@ -6,7 +6,7 @@ import { Grid, Row } from 'react-bootstrap';
 class MessageContainer extends Component {
   renderMessages = () => {
     return (
-      this.props.appState.messages.map((data, i) => {
+      this.props.messagesState.messages.map((data, i) => {
         return (
           <Message
             key={`message_${i}`}
@@ -19,14 +19,14 @@ class MessageContainer extends Component {
   render() {
     return (
       <Grid className="MessageContainer">
-        <Row>{this.props.appState ? this.renderMessages():''}</Row>
+        <Row>{this.props.messagesState ? this.renderMessages():''}</Row>
       </Grid>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  appState: state.messages
+  messagesState: state.messages
 })
 
 export default connect(mapStateToProps, null)(MessageContainer);
