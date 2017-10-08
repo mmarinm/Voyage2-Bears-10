@@ -24,7 +24,9 @@
     "apiai": "^4.0.3",
     "compression": "^1.7.1",
     "concurrently": "^3.5.0",
+    "cross-env": "^5.0.5",
     "express": "^4.16.1",
+    "pm2": "^2.7.1",
     "socket.io": "^2.0.3"
   }
 }
