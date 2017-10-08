@@ -6,7 +6,8 @@ export function updateMessages(messageText) {
     type: UPDATE_MESSAGE,
     payload: {
       messageText,
-      userMessage: true
+      timestamp: new Date(),
+      isUserMessage: true
     }
   });
 }
@@ -16,7 +17,8 @@ export function botMessage(messageText) {
     type: BOT_MESSAGE,
     payload: {
       messageText,
-      userMessage: false
+      timestamp: new Date(),
+      isUserMessage: false
     }
   });
 }

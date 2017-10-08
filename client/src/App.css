@@ -21,3 +21,7 @@ form {
   border-radius: 10px;
   padding: 10px;
 }
+
+.MessageRow {
+  margin: 15px 0;
+}

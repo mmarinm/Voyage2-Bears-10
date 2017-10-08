@@ -19,7 +19,7 @@ class MessageContainer extends Component {
   render() {
     return (
       <Grid className="MessageContainer">
-        <Row>{this.props.messagesState ? this.renderMessages():''}</Row>
+        {this.props.messagesState ? this.renderMessages():''}
       </Grid>
     );
   }

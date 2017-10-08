@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 const styleUser = {
   float: 'right',
@@ -12,11 +12,12 @@ const styleBot = {
 };
 
 const Message  = (props) =>  {
-  const { messageText, userMessage } = props.data;
+  const { messageText, isUserMessage, timestamp } = props.data;
   return (
-    <Col xs={12}>
-      <h3 className='Message' style={userMessage ? styleUser : styleBot}>{messageText}</h3>
-    </Col>
+    <Row className='MessageRow'>
+      <div style={{textAlign: isUserMessage ? 'right' : 'left'}}>Sent: {timestamp.toLocaleTimeString()}</div>
+      <h3 className='Message' style={isUserMessage ? styleUser : styleBot}>{messageText}</h3>
+    </Row>
   );
 }
 
