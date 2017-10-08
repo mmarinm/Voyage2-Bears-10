@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'test';
+
 const exec = require('mz/child_process').exec;
 const request = require('supertest-as-promised');
 const expect = require('chai').expect;
