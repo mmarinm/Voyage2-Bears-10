@@ -9,11 +9,11 @@ module.exports = {
       name: "API",
       script: "npm",
       args: "start",
-      watch: true,
       error_file: "logs/error/err.log",
       out_file: "logs/out.log",
       log_date_format: "YYYY-MM-DD HH:mm Z",
       env: {
+        NODE_ENV: "development",
         COMMON_VARIABLE: "true"
       },
       env_production: {
@@ -34,15 +34,6 @@ module.exports = {
    * http://pm2.keymetrics.io/docs/usage/deployment/
    */
   deploy: {
-    production: {
-      user: "node",
-      host: "212.83.163.1",
-      ref: "origin/master",
-      repo: "git@github.com:repo.git",
-      path: "/var/www/production",
-      "post-deploy":
-        "npm install && pm2 reload ecosystem.config.js --env production"
-    },
     dev: {
       user: "node",
       host: "212.83.163.1",
