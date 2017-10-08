@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Message from './message';
-import { Grid, Row } from 'react-bootstrap';
+import { Grid } from 'react-bootstrap';
 
 class MessageContainer extends Component {
   renderMessages = () => {

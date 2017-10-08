@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Button, Col, FormControl, Row } from 'react-bootstrap';
-import { sendMessageToServer } from '../API/WShelpers';
+
+import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
 import { updateMessages, botMessage } from '../actions';
 
 class MessageBar extends Component {
@@ -29,9 +30,7 @@ class MessageBar extends Component {
     }));
 
     this.props.updateMessages(messageText);
-    setTimeout(() => {
-      this.props.botMessage(`Request: ${messageText}.`);
-    }, 1000)
+    getBotMessage(msg => this.props.botMessage(msg))
   }
 
   render() {
