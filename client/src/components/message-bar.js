@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Button, Col, FormControl, Row } from 'react-bootstrap';
 
 import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
-import { updateMessages, botMessage } from '../actions';
+import { newUserMessage, newBotMessage } from '../actions';
 
 class MessageBar extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class MessageBar extends Component {
 
   handleChange = (event) => {
     const newMessage = event.target.value;
-    this.setState(prevState => ({ ...prevState, messageText: newMessage }));
+    this.setState({ messageText: newMessage });
   }
 
   handleSubmit = (e) => {
@@ -24,13 +24,10 @@ class MessageBar extends Component {
 
     //Send the message to the server
     sendMessageToServer(messageText);
-    this.setState(prevState => ({
-      ...prevState,
-      messageText: ''
-    }));
+    this.setState({ messageText: '' });
 
-    this.props.updateMessages(messageText);
-    getBotMessage(msg => this.props.botMessage(msg))
+    this.props.newUserMessage(messageText);
+    getBotMessage(msg => this.props.newBotMessage(msg))
   }
 
   render() {
@@ -54,7 +51,7 @@ class MessageBar extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ updateMessages, botMessage }, dispatch);
+  return bindActionCreators({ newUserMessage, newBotMessage }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(MessageBar);
