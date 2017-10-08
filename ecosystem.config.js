@@ -8,10 +8,13 @@ module.exports = {
     {
       name: "API",
       script: "npm",
-      args: "run server",
+      args: "start",
       watch: true,
+      error_file: "logs/error/err.log",
+      out_file: "logs/out.log",
+      log_date_format: "YYYY-MM-DD HH:mm Z",
       env: {
-        NODE_ENV: "development"
+        COMMON_VARIABLE: "true"
       },
       env_production: {
         NODE_ENV: "production"
