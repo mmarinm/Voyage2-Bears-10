@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "precommit": "lint-staged",
     "start": "node index.js",
     "server": "nodemon index.js",
     "build:client": "npm run build --prefix client",
@@ -34,7 +35,10 @@
     "compression": "^1.7.1",
     "concurrently": "^3.5.0",
     "express": "^4.16.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.3",
     "pm2": "^2.7.1",
+    "prettier": "^1.7.4",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
@@ -44,5 +48,8 @@
     "mz": "^2.7.0",
     "supertest": "^3.0.0",
     "supertest-as-promised": "^4.0.2"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
   }
 }

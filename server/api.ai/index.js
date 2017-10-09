@@ -1,4 +1,4 @@
-const keys= require('../../config/keys')
+const keys = require('../../config/keys');
 const apiai = require('apiai')(keys.APIAI_KEY);
 
 // process.env.APIAI_KEY;
