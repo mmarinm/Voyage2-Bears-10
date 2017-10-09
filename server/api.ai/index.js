@@ -1,4 +1,7 @@
-const apiai = require('apiai')(process.env.APIAI_KEY);
+const keys= require('../../config/keys')
+const apiai = require('apiai')(keys.APIAI_KEY);
+
+// process.env.APIAI_KEY;
 
 const processMessage = msg => {
   console.log(msg);

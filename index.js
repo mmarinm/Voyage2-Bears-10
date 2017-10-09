@@ -1,9 +1,3 @@
-const dotenv = require('dotenv').config({
-  path:
-    process.env.NODE_ENV === 'test'
-      ? 'test.env'
-      : process.env.NODE_ENV === 'production' ? 'production.env' : '.env'
-});
 const server = require('./server');
 const app = require('./server/express');
 const createSocket = require('./server/websocket');
@@ -20,3 +14,4 @@ server.listen(port, err => {
   }
   console.info(`Server running on http://localhost:${port} [${env}]`);
 });
+
