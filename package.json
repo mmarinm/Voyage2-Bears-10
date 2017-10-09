@@ -6,10 +6,18 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
+    "build:client": "npm run build --prefix client",
     "client": "npm run start --prefix client",
     "buildclient": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "SET NODE_ENV=test && mocha test/*"
+    "pm2:dev":
+      "pm2 start ecosystem-dev.config.js --env development && pm2 logs",
+    "pm2:prod":
+      "npm run build:client && pm2 start ecosystem-prod.config.js --env production",
+    "pm2:stop": "pm2 delete all",
+    "pm2:monitor": "pm2 monit",
+    "logs:clear": "pm2 flush"
   },
   "repository": {
     "type": "git",
@@ -26,6 +34,7 @@
     "compression": "^1.7.1",
     "concurrently": "^3.5.0",
     "express": "^4.16.1",
+    "pm2": "^2.7.1",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
