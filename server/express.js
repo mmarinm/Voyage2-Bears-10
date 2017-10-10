@@ -1,5 +1,5 @@
-const Express = require("express");
-const compression = require("compression");
+const Express = require('express');
+const compression = require('compression');
 
 const app = new Express();
 app.use(compression());

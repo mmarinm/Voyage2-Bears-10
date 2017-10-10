@@ -6,18 +6,18 @@ module.exports = {
   apps: [
     // First application
     {
-      name: "API",
-      script: "npm",
-      args: "start",
-      error_file: "logs/error/err.log",
-      out_file: "logs/out.log",
-      log_date_format: "YYYY-MM-DD HH:mm Z",
+      name: 'API',
+      script: 'npm',
+      args: 'start',
+      error_file: 'logs/error/err.log',
+      out_file: 'logs/out.log',
+      log_date_format: 'YYYY-MM-DD HH:mm Z',
       wait_ready: true,
       env: {
-        COMMON_VARIABLE: "true"
+        COMMON_VARIABLE: 'true'
       },
       env_production: {
-        NODE_ENV: "production"
+        NODE_ENV: 'production'
       }
     }
   ],
@@ -28,13 +28,13 @@ module.exports = {
    */
   deploy: {
     production: {
-      user: "node",
-      host: "212.83.163.1",
-      ref: "origin/master",
-      repo: "git@github.com:repo.git",
-      path: "/var/www/production",
-      "post-deploy":
-        "npm install && pm2 reload ecosystem.config.js --env production"
+      user: 'node',
+      host: '212.83.163.1',
+      ref: 'origin/master',
+      repo: 'git@github.com:repo.git',
+      path: '/var/www/production',
+      'post-deploy':
+        'npm install && pm2 reload ecosystem.config.js --env production'
     }
   }
 };
