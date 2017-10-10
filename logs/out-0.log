@@ -1,0 +1,48 @@
+2017-10-08 17:07 -04:00: 
+> voyage2-bears-team-10@1.0.0 start /media/larry/B89880DC98809B10/WebApps/Chingus/ChinguTeams/Voyage2-Bears-10
+> node index.js
+
+2017-10-08 17:07 -04:00: Server running on http://localhost:5000 [development]
+2017-10-08 17:07 -04:00: what time is it in arizona
+2017-10-08 17:07 -04:00: resp { id: '30ac2cbc-fee3-483c-a8c3-bea6af5568d9',
+  timestamp: '2017-10-08T21:07:45.309Z',
+  lang: 'en',
+  result: 
+   { source: 'agent',
+     resolvedQuery: 'Is today Saturday?',
+     action: 'input.unknown',
+     actionIncomplete: false,
+     parameters: {},
+     contexts: [],
+     metadata: 
+      { intentId: '5e19689f-b54d-4c4b-b538-b14d287e0c09',
+        webhookUsed: 'false',
+        webhookForSlotFillingUsed: 'false',
+        intentName: 'Default Fallback Intent' },
+     fulfillment: 
+      { speech: 'I didn\'t get that. Can you say it again?',
+        messages: [Array] },
+     score: 1 },
+  status: { code: 200, errorType: 'success' },
+  sessionId: 'randomId123' }
+2017-10-08 17:08 -04:00: what time is it in jacksonville
+2017-10-08 17:08 -04:00: resp { id: '28f4c464-765b-4cd5-a8e1-ef615cde8942',
+  timestamp: '2017-10-08T21:08:41.327Z',
+  lang: 'en',
+  result: 
+   { source: 'agent',
+     resolvedQuery: 'Is today Saturday?',
+     action: 'input.unknown',
+     actionIncomplete: false,
+     parameters: {},
+     contexts: [],
+     metadata: 
+      { intentId: '5e19689f-b54d-4c4b-b538-b14d287e0c09',
+        webhookUsed: 'false',
+        webhookForSlotFillingUsed: 'false',
+        intentName: 'Default Fallback Intent' },
+     fulfillment: { speech: 'What was that?', messages: [Array] },
+     score: 1 },
+  status: { code: 200, errorType: 'success' },
+  sessionId: 'randomId123' }
+2017-10-08 17:09 -04:00: Just got SIGINTed, but I dont care
