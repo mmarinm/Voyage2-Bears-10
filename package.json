@@ -11,7 +11,7 @@
     "client": "npm run start --prefix client",
     "buildclient": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "SET NODE_ENV=test && mocha test/*",
+    "test": "NODE_ENV=test && mocha test/*",
     "pm2:dev":
       "pm2 start ecosystem-dev.config.js --env development && pm2 logs",
     "pm2:prod":
@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/chingu-coders/Voyage2-Bears-10#readme",
   "dependencies": {
+    "@google/maps": "^0.4.5",
     "apiai": "^4.0.3",
     "compression": "^1.7.1",
     "concurrently": "^3.5.0",
