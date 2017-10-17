@@ -1,5 +1,6 @@
+const keys = require('../../config/keys');
 const googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyBEVD-mVG-WRQq2Ye-dwDa_0-zG6D5uvzA',
+  key: keys.API_KEY,
   Promise
 });
 const momentTimezone = require('moment-timezone');
