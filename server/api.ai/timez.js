@@ -30,24 +30,27 @@ function returnTimezone(coords) {
       },
       (err, data) => {
         if (err) reject(err);
-        else resolve(data);
+        else resolve(data.json);
       }
     );
   });
 }
-function returnTime(location) {
-  var geo = returnGeo(location);
-  return geo
-    .then(data => {
-      var tz = returnTimezone(data);
-      return tz.then(data => {
-        var time = momentTimezone()
-          .tz(data.json.timeZoneId)
-          .format('LT');
-        return time;
-      });
-    })
-    .catch(err => console.error(err));
+async function returnTime(params) {
+  try {
+    const locationProperty = Object.getOwnPropertyNames(params.location);
+    const location = params.location[locationProperty];
+    let time;
+    {
+      let geo = await returnGeo(location);
+      let tz = await returnTimezone(geo);
+      time = momentTimezone()
+        .tz(tz.timeZoneId)
+        .format('LT');
+    }
+    return time;
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 module.exports = returnTime;
