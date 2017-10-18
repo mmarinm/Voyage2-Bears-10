@@ -8,7 +8,7 @@ function processResponse(resp) {
   if (action) {
     return actions[action](parameters);
   } else {
-    return 'No action';
+    return { result: 'Please repeat your question' };
   }
 }
 

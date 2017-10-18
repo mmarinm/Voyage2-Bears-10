@@ -5,7 +5,7 @@ const actions = {
     const locationProperty = Object.getOwnPropertyNames(params.location);
     const location = params.location[locationProperty];
     const time = await returnTime(location);
-    return JSON.stringify({ time: time });
+    return { result: time };
   }
 };
 
