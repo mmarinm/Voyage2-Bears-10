@@ -3,29 +3,23 @@ import { UPDATE_MESSAGE, BOT_MESSAGE } from '../actions';
 const INITIAL_STATE = {
   messages: [
     {
-      messageText: 'test1',
-      userMessage: true
+      messageText: 'Hey!',
+      timestamp: new Date(),
+      isUserMessage: false
     },
     {
-      messageText: 'test2',
-      userMessage: false
-    },
-    {
-      messageText: 'test3',
-      userMessage: false
+      messageText: 'Ask me about the time!',
+      timestamp: new Date(),
+      isUserMessage: false
     }
   ]
 }
 
-export default function appState(state=INITIAL_STATE, action) {
+export default function messageReducer(state=INITIAL_STATE, action) {
   switch(action.type) {
     case UPDATE_MESSAGE:
     case BOT_MESSAGE:
-      return (
-        Object.assign({}, state, {
-          messages: state.messages.concat(action.payload)
-        })
-      )
+      return { ...state, messages: [...state.messages, action.payload] };
     default:
       return state;
   }

@@ -16,11 +16,16 @@ class MessageContainer extends Component {
     )
   }
 
+  // Force window to scroll down if there is a long conversation history.
+  componentDidUpdate(currentProps, currentState) {
+    window.scrollTo(0, document.body.clientHeight);
+  }
+
   render() {
     console.log("TEST" + this.props.messages);
     return (
-      <Grid>
-        <Row>{this.props.appState ? this.renderMessages():''}</Row>
+      <Grid className='MessageContainer'>
+        {this.props.appState ? this.renderMessages():''}
       </Grid>
     );
   }
