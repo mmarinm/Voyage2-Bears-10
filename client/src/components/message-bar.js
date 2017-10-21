@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { sendMessageToServer } from '../API/WShelpers';
-import { updateMessages, botMessages } from '../actions';
+import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
+import { newUserMessage, newBotMessage } from '../actions';
 import { Form, FormControl, Button, Row, Col } from 'react-bootstrap';
 
 class MessageBar extends Component {
@@ -23,25 +23,20 @@ class MessageBar extends Component {
 
     //Send the message to the server
     sendMessageToServer(messageText);
-    this.setState(prevState => ({
-      ...prevState,
-      messageText: ''
-    }));
+    this.setState({ messageText: '' });
 
-    this.props.updateMessages(messageText);
-    setTimeout(() => {
-      this.props.botMessages("Did you say " + messageText + "?")
-    }, 1000)
+    this.props.newUserMessage(messageText);
+    getBotMessage(msg => this.props.newBotMessage(msg));
   }
 
   render() {
     return (
-      <Form inline onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit}>
         <Row>
           <Col xs={9} sm={10} lg={11}>
             <FormControl
               type="text"
-              value={this.state.message}
+              value={this.state.messageText}
               onChange={this.handleChange}
             />
           </Col>
@@ -55,7 +50,7 @@ class MessageBar extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ updateMessages, botMessages }, dispatch);
+  return bindActionCreators({ newUserMessage, newBotMessage }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(MessageBar);

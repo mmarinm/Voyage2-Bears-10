@@ -49,6 +49,10 @@ form button {
   background: #eee;
 }
 
+.MessageContainer {
+  margin-bottom: 45px;
+}
+
 .Message {
   padding: 10px;
   border-radius: 10px;
