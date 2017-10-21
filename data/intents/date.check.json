@@ -1,0 +1,249 @@
+{
+  "id": "52168369-9e09-4f66-8b70-5480755540ef",
+  "name": "date.check",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "date.check",
+      "affectedContexts": [
+        {
+          "name": "date-check",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "06fdd486-79e0-4f53-bca4-3a69ad0313f3",
+          "dataType": "@sys.date",
+          "name": "date",
+          "value": "$date",
+          "isList": false
+        },
+        {
+          "id": "10c81d94-1487-4dc6-a5d5-268bec611cea",
+          "dataType": "@sys.location",
+          "name": "location",
+          "value": "$location",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1507389673096,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "d526e4fc-6461-402d-9511-8c1f34b4dcfe",
+      "data": [
+        {
+          "text": "is it "
+        },
+        {
+          "text": "New Year",
+          "alias": "date",
+          "meta": "@sys.date",
+          "userDefined": true
+        },
+        {
+          "text": " in "
+        },
+        {
+          "text": "Korea",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 1,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "1c9005be-f939-4774-91ca-1e7ab691f29e",
+      "data": [
+        {
+          "text": "tell me is it "
+        },
+        {
+          "text": "September 8",
+          "alias": "date",
+          "meta": "@sys.date",
+          "userDefined": true
+        },
+        {
+          "text": " in "
+        },
+        {
+          "text": "Munich",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "077dc88b-3e0c-435a-aca6-86e2147cfd85",
+      "data": [
+        {
+          "text": "is it "
+        },
+        {
+          "text": "Thanksgiving",
+          "alias": "date",
+          "meta": "@sys.date",
+          "userDefined": true
+        },
+        {
+          "text": " today"
+        }
+      ],
+      "isTemplate": false,
+      "count": 1,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "f1023960-9fa8-4e3c-a63a-aaf0873fdd47",
+      "data": [
+        {
+          "text": "is it the ",
+          "userDefined": false
+        },
+        {
+          "text": "21st of February",
+          "alias": "date",
+          "meta": "@sys.date",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 1,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "6919fa93-5067-4089-91e2-a4ed1bcbfb6d",
+      "data": [
+        {
+          "text": "are we in "
+        },
+        {
+          "text": "March 2017",
+          "alias": "date",
+          "meta": "@sys.date",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "85f64d35-c525-4eb4-888b-dbf54007ac10",
+      "data": [
+        {
+          "text": "is it the "
+        },
+        {
+          "text": "21st of February",
+          "alias": "date",
+          "meta": "@sys.date",
+          "userDefined": false
+        },
+        {
+          "text": " in "
+        },
+        {
+          "text": "Moscow",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "9416bed0-bb2d-4b14-8eb7-110e61471d78",
+      "data": [
+        {
+          "text": "is today "
+        },
+        {
+          "text": "28th",
+          "alias": "date",
+          "meta": "@sys.date",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "1efd47aa-f5e3-4644-9f63-a17a4a9d07e5",
+      "data": [
+        {
+          "text": "is it "
+        },
+        {
+          "text": "June 19th",
+          "alias": "date",
+          "meta": "@sys.date",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "999be7f8-7a02-4e66-bfb2-c4766a89dffb",
+      "data": [
+        {
+          "text": "I'd like to know if it's "
+        },
+        {
+          "text": "January 2018",
+          "alias": "date",
+          "meta": "@sys.date",
+          "userDefined": true
+        },
+        {
+          "text": " now"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}
