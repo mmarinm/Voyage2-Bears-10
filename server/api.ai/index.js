@@ -22,29 +22,37 @@ const actions = {
     if (pars.location) {
       //get timezone for either pars.location.city || pars.location.country
     }
-    const time = moment.tz(tz) //* timezone_string = "Australia/Sydney" */
+    const time = moment.tz(tz); //* timezone_string = "Australia/Sydney" */
     var timestring = time.format('h:mm a');
     return timestring;
   }
 };
 
-const getApiAiResp = msg => {
+// function processResponse(resp) {
+//   const { parameters, action } = resp.result;
+//   if (action) {
+//     return actions[action](parameters);
+//   } else {
+//     return { result: 'Please repeat your question' };
+//   }
+// }
+
+function aiRequest(msg) {
   return new Promise((resolve, reject) => {
     const request = apiai.textRequest(msg, {
       sessionId: 'randomId123'
     });
-    request.on('response', res => {
-      resolve(res);
+    request.on('response', resp => {
+      resolve(resp);
     });
-
-    request.on('error', err => {
-      reject(err);
+    request.on('error', error => {
+      reject(error);
     });
     request.end();
   });
-};
+}
 
-const processResp = resp => {
+const processResponse = resp => {
   // console.log(resp);
   const { parameters, action } = resp.result;
   // will parse time zone for the server location. In development it will work correctly,
@@ -60,10 +68,10 @@ const processResp = resp => {
 
 const processMessage = async msg => {
   try {
-    const resp = await getApiAiResp(msg);
-    return processResp(resp);
+    const response = await aiRequest(msg);
+    return processResponse(response);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
