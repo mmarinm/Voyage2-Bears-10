@@ -9,7 +9,7 @@ function createSocket(server) {
     client.on('client message', async msg => {
       const resp = await processMessage(msg);
       console.log('resp', resp);
-      client.emit('bot message', 'hello from server');
+      client.emit('bot message', resp);
     });
   });
 }

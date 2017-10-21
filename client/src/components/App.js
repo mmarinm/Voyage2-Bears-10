@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import MessageBar from './message-bar';
 import MessageContainer from './message-container';
-import { getBotMessage } from '../API/WShelpers';
+import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
 import { newBotMessage } from '../actions';
 import '../App.css';
 

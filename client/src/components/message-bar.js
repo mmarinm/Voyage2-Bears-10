@@ -22,12 +22,14 @@ class MessageBar extends Component {
     const { messageText } = this.state;
     e.preventDefault();
 
-    //Send the message to the server
-    sendMessageToServer(messageText);
-    this.setState({ messageText: '' });
+    if (messageText !== '') {
+      //Send the message to the server
+      sendMessageToServer(messageText);
+      this.setState({ messageText: '' });
 
-    this.props.newUserMessage(messageText);
-    getBotMessage(msg => this.props.newBotMessage(msg));
+      this.props.newUserMessage(messageText);
+      getBotMessage(msg => this.props.newBotMessage(msg));
+    }
   }
 
   render() {
