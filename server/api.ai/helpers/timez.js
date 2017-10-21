@@ -1,4 +1,4 @@
-const keys = require('../../config/keys');
+const keys = require('../../../config/keys.js');
 const googleMapsClient = require('@google/maps').createClient({
   key: keys.API_KEY,
   Promise
@@ -18,6 +18,7 @@ function returnGeo(location) {
     );
   });
 }
+
 function returnTimezone(coords) {
   return new Promise(function(resolve, reject) {
     googleMapsClient.timezone(
@@ -35,6 +36,7 @@ function returnTimezone(coords) {
     );
   });
 }
+
 async function returnTime(params) {
   try {
     const locationProperty = Object.getOwnPropertyNames(params.location);
@@ -53,4 +55,8 @@ async function returnTime(params) {
   }
 }
 
-module.exports = returnTime;
+module.exports = {
+  returnTime,
+  returnTimezone,
+  returnGeo
+};
