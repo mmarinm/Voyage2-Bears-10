@@ -12,6 +12,5 @@ function createSocket(server) {
       client.emit('bot message', resp);
     });
   });
-
 }
 module.exports = createSocket;
