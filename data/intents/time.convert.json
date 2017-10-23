@@ -1,0 +1,543 @@
+{
+  "id": "eaf9bd9f-0260-4430-a7b7-52a8c5e26860",
+  "name": "time.convert",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "time.convert",
+      "affectedContexts": [
+        {
+          "name": "convert-time",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "422820a7-be29-447e-a35f-7b523eecd80a",
+          "required": false,
+          "dataType": "@sys.time",
+          "name": "time-from",
+          "value": "$time-from",
+          "defaultValue": "",
+          "isList": false
+        },
+        {
+          "id": "80c58606-fc7b-4868-8e81-14e6a923b4af",
+          "dataType": "@sys.location",
+          "name": "location-from",
+          "value": "$location-from",
+          "isList": false
+        },
+        {
+          "id": "a5628708-4bf1-4323-8659-942585a2f723",
+          "dataType": "@sys.location",
+          "name": "location-to",
+          "value": "$location-to",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508632949671,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "71740d16-b1f8-4fa8-b292-263045f8773b",
+      "data": [
+        {
+          "text": "what time is it in ",
+          "userDefined": false
+        },
+        {
+          "text": "LA",
+          "alias": "location-to",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " when it's ",
+          "userDefined": false
+        },
+        {
+          "text": "midday",
+          "alias": "time-from",
+          "meta": "@sys.time",
+          "userDefined": true
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "Moscow",
+          "alias": "location-from",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "c5a8c436-a9a7-4ca3-85ed-44cf97912aad",
+      "data": [
+        {
+          "text": "can",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " you convert time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "053c3702-9bce-40c4-a2a5-983c9d593b88",
+      "data": [
+        {
+          "text": "I want to convert time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "a0f25de4-22e0-4c8a-b971-df49e87f69e8",
+      "data": [
+        {
+          "text": "time converter",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "f34f8b00-ae7c-48e0-af7a-6a6f89832a7c",
+      "data": [
+        {
+          "text": "what ",
+          "userDefined": false
+        },
+        {
+          "text": "time",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is ",
+          "userDefined": false
+        },
+        {
+          "text": "in",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "Moscow",
+          "alias": "location-to",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "when",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": "'s ",
+          "userDefined": false
+        },
+        {
+          "text": "5 am",
+          "alias": "time-from",
+          "meta": "@sys.time",
+          "userDefined": true
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "in",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "Palo Alto",
+          "alias": "location-from",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "d2d1f6cc-cf4e-4ee2-9d99-ed6a74533679",
+      "data": [
+        {
+          "text": "what time is in ",
+          "userDefined": false
+        },
+        {
+          "text": "London",
+          "alias": "location-to",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " when ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is ",
+          "userDefined": false
+        },
+        {
+          "text": "5 pm",
+          "alias": "time-from",
+          "meta": "@sys.time",
+          "userDefined": true
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "New York",
+          "alias": "location-from",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "4481a1c0-f095-458f-b7b2-988ccb0adac6",
+      "data": [
+        {
+          "text": "when ",
+          "userDefined": false
+        },
+        {
+          "text": "it's",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "6 am",
+          "alias": "time-from",
+          "meta": "@sys.time",
+          "userDefined": true
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "Moscow",
+          "alias": "location-from",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " what time is ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "Tokyo",
+          "alias": "location-to",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "b7c04089-a086-4539-9228-0478bf850593",
+      "data": [
+        {
+          "text": "what time is in ",
+          "userDefined": false
+        },
+        {
+          "text": "France",
+          "alias": "location-to",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " when ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is ",
+          "userDefined": false
+        },
+        {
+          "text": "6 am",
+          "alias": "time-from",
+          "meta": "@sys.time",
+          "userDefined": true
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "Portugal",
+          "alias": "location-from",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "0c6424f9-f5f1-4410-8d82-065ea41ee02e",
+      "data": [
+        {
+          "text": "when ",
+          "userDefined": false
+        },
+        {
+          "text": "it's",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "11 a.m.",
+          "alias": "time-from",
+          "meta": "@sys.time",
+          "userDefined": true
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "USA",
+          "alias": "location-from",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " what time is ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "Australia",
+          "alias": "location-to",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "2a3c84f8-8c75-4749-8843-13c1a78a2057",
+      "data": [
+        {
+          "text": "convert ",
+          "userDefined": false
+        },
+        {
+          "text": "Moscow",
+          "alias": "location-from",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " time in ",
+          "userDefined": false
+        },
+        {
+          "text": "Tokyo",
+          "alias": "location-to",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "01f43bbf-1502-47ad-8b3b-b3af4e3a3766",
+      "data": [
+        {
+          "text": "convert ",
+          "userDefined": false
+        },
+        {
+          "text": "London",
+          "alias": "location-from",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "e87a57bb-fcb6-4627-b846-a4680080d376",
+      "data": [
+        {
+          "text": "convert time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "ca0ae75f-1a1b-4e6b-8674-4c9779b38540",
+      "data": [
+        {
+          "text": "what time is it in ",
+          "userDefined": false
+        },
+        {
+          "text": "Miami",
+          "alias": "location-to",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " when it's ",
+          "userDefined": false
+        },
+        {
+          "text": "11 am",
+          "alias": "time-from",
+          "meta": "@sys.time",
+          "userDefined": true
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "Tbilisi",
+          "alias": "location-from",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}
