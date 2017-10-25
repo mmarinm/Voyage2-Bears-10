@@ -16,6 +16,11 @@ form {
   width: 100%;
 }
 
+/*.form-control {
+  display: inline-block;
+  width: 75%;
+}
+
 form input {
   border: 0;
   padding: 10px;
@@ -24,11 +29,11 @@ form input {
 }
 
 form button {
-  width: 9%;
+  width: 24%;
   background: rgb(130, 224, 255);
   border: none;
   padding: 10px;
-}
+}*/
 
 .messages {
   list-style-type: none;
@@ -42,4 +47,13 @@ form button {
 
 .messages li:nth-child(odd) {
   background: #eee;
+}
+
+.MessageContainer {
+  margin-bottom: 45px;
+}
+
+.Message {
+  padding: 10px;
+  border-radius: 10px;
 }
