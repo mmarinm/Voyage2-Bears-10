@@ -4,11 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "precommit": "lint-staged",
     "start": "node index.js",
     "server": "nodemon index.js",
+    "build:client": "npm run build --prefix client",
     "client": "npm run start --prefix client",
+    "buildclient": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test && mocha test/*",
+    "pm2:dev":
+      "pm2 start ecosystem-dev.config.js --env development && pm2 logs",
+    "pm2:prod":
+      "npm run build:client && pm2 start ecosystem-prod.config.js --env production",
+    "pm2:stop": "pm2 delete all",
+    "pm2:monitor": "pm2 monit",
+    "logs:clear": "pm2 flush"
   },
   "repository": {
     "type": "git",
@@ -21,9 +31,30 @@
   },
   "homepage": "https://github.com/chingu-coders/Voyage2-Bears-10#readme",
   "dependencies": {
+    "@google/maps": "^0.4.5",
+    "apiai": "^4.0.3",
+    "compression": "^1.7.1",
     "concurrently": "^3.5.0",
     "express": "^4.16.1",
+<<<<<<< HEAD
     "nodemon": "^1.12.1",
+=======
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.3",
+    "pm2": "^2.7.1",
+    "prettier": "^1.7.4",
+>>>>>>> 73b6a4f1ac61c3da4c2f8fd44df7a1ebee85fff6
     "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^4.0.1",
+    "mz": "^2.7.0",
+    "supertest": "^3.0.0",
+    "supertest-as-promised": "^4.0.2"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
   }
 }

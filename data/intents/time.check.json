@@ -1,0 +1,381 @@
+{
+  "id": "e30f6e18-de8c-46ce-9bf7-8bda4e3ac3a2",
+  "name": "time.check",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "time.check",
+      "affectedContexts": [
+        {
+          "name": "time",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "c8e2f9cd-1f4f-418d-806f-e9ad55660283",
+          "dataType": "@sys.time",
+          "name": "time",
+          "value": "$time",
+          "isList": false
+        },
+        {
+          "id": "0b67ff92-ec21-43a5-8539-1c3d99d6c76d",
+          "dataType": "@sys.location",
+          "name": "location",
+          "value": "$location",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508632949553,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "05347af4-4f5e-4811-a4fb-c33d4e8f697d",
+      "data": [
+        {
+          "text": "it's ",
+          "userDefined": false
+        },
+        {
+          "text": "5 o'clock",
+          "alias": "time",
+          "meta": "@sys.time",
+          "userDefined": true
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "London",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " right",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "632ecf82-bd37-48ba-9c66-3bb2ccfb9b54",
+      "data": [
+        {
+          "text": "check if it's ",
+          "userDefined": false
+        },
+        {
+          "text": "9 pm",
+          "alias": "time",
+          "meta": "@sys.time",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "in",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "Amsterdam",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "1571d432-cfd8-401e-8dc7-4766dfdfd4c5",
+      "data": [
+        {
+          "text": "can you take a look and check if it's ",
+          "userDefined": false
+        },
+        {
+          "text": "7 pm",
+          "alias": "time",
+          "meta": "@sys.time",
+          "userDefined": true
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "Moscow",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " already",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "f8645db2-c304-49d3-82a2-0789992c17b2",
+      "data": [
+        {
+          "text": "check if it's ",
+          "userDefined": false
+        },
+        {
+          "text": "6 am",
+          "alias": "time",
+          "meta": "@sys.time",
+          "userDefined": true
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "Palo Alto",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " now",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "37f375d3-8053-4577-8bcb-0a7c33d9d3ef",
+      "data": [
+        {
+          "text": "is ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "5 pm",
+          "alias": "time",
+          "meta": "@sys.time",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "0fce3acb-ca65-4373-9fb2-19f40b58bf58",
+      "data": [
+        {
+          "text": "is ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "6 o'clock",
+          "alias": "time",
+          "meta": "@sys.time",
+          "userDefined": false
+        },
+        {
+          "text": " right now",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "bd19df28-8172-4b58-93d1-25419a8a22a4",
+      "data": [
+        {
+          "text": "is ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "5 o'clock in the morning",
+          "alias": "time",
+          "meta": "@sys.time",
+          "userDefined": false
+        },
+        {
+          "text": " now",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "8339a66b-01f4-4af7-a729-d83ba51ffebf",
+      "data": [
+        {
+          "text": "is ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "3 p m",
+          "alias": "time",
+          "meta": "@sys.time",
+          "userDefined": false
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "London",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "27404fce-06b2-4654-8626-75d85f20b528",
+      "data": [
+        {
+          "text": "is ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "4 pm",
+          "alias": "time",
+          "meta": "@sys.time",
+          "userDefined": false
+        },
+        {
+          "text": " in ",
+          "userDefined": false
+        },
+        {
+          "text": "New York",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": false
+        },
+        {
+          "text": " now",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "affb1271-3d96-4d72-830d-3fd8aa0a5f35",
+      "data": [
+        {
+          "text": "check if it's ",
+          "userDefined": false
+        },
+        {
+          "text": "5 pm",
+          "alias": "time",
+          "meta": "@sys.time",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}

@@ -5,8 +5,8 @@ const socket = openSocket('http://localhost:5000');
 // but will be necessary when we add async api request in index.js
 function getBotMessage(fn) {
   socket.on('bot message', msg => {
-    // console.log(msg);
-    fn(msg)
+    console.log(msg);
+    fn(msg);
   });
 }
 
