@@ -7,9 +7,12 @@ function createSocket(server) {
 
   io.on('connection', client => {
     client.on('client message', async msg => {
-      const resp = await processMessage(msg);
-      console.log('resp', resp);
-      client.emit('bot message', resp);
+      try {
+        const resp = await processMessage(msg);
+        client.emit('bot message', resp);
+      } catch (err) {
+        console.error(err);
+      }
     });
   });
 }

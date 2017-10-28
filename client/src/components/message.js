@@ -10,16 +10,18 @@ const styleBot = {
   background: '#999999'
 };
 
-const Message = (props) => {
+const Message = props => {
   const { messageText, isUserMessage, timestamp } = props.data;
   return (
     <Row>
-      <div style={{textAlign: isUserMessage ? 'right':'left'}}>
-        {isUserMessage ? 'Sent':'Received'}: {timestamp.toLocaleTimeString()}
+      <div style={{ textAlign: isUserMessage ? 'right' : 'left' }}>
+        {isUserMessage ? 'Sent' : 'Received'}: {timestamp.toLocaleTimeString()}
       </div>
-      <h3 className='Message' style={isUserMessage ? styleUser : styleBot}>{messageText}</h3>
+      <h3 className="Message" style={isUserMessage ? styleUser : styleBot}>
+        {messageText}
+      </h3>
     </Row>
   );
-}
+};
 
 export default Message;

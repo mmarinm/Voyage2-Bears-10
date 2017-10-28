@@ -5,16 +5,10 @@ import { Grid, Row } from 'react-bootstrap';
 
 class MessageContainer extends Component {
   renderMessages = () => {
-    return (
-      this.props.appState.messages.map((data, i) => {
-        return (
-          <Message
-            key={`message_${i}`}
-            data={data} />
-        );
-      })
-    )
-  }
+    return this.props.appState.messages.map((data, i) => {
+      return <Message key={`message_${i}`} data={data} />;
+    });
+  };
 
   // Force window to scroll down if there is a long conversation history.
   componentDidUpdate(currentProps, currentState) {
@@ -22,10 +16,10 @@ class MessageContainer extends Component {
   }
 
   render() {
-    console.log("TEST" + this.props.messages);
+    console.log('TEST' + this.props.messages);
     return (
-      <Grid className='MessageContainer'>
-        {this.props.appState ? this.renderMessages():''}
+      <Grid className="MessageContainer">
+        {this.props.appState ? this.renderMessages() : ''}
       </Grid>
     );
   }
@@ -33,6 +27,6 @@ class MessageContainer extends Component {
 
 const mapStateToProps = state => ({
   appState: state.messages
-})
+});
 
 export default connect(mapStateToProps, null)(MessageContainer);

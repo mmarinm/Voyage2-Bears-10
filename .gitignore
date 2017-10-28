@@ -1,8 +1,8 @@
+/.DS_Store
 /node_modules
 /.vscode
-<<<<<<< HEAD
 yarn.lock
-=======
+.DS_Store
 
 npm-debug.log*
 yarn-debug.log*
@@ -11,4 +11,3 @@ yarn-error.log*
 *.env
 
 /config
->>>>>>> 73b6a4f1ac61c3da4c2f8fd44df7a1ebee85fff6

@@ -13,10 +13,10 @@ const INITIAL_STATE = {
       isUserMessage: false
     }
   ]
-}
+};
 
-export default function messageReducer(state=INITIAL_STATE, action) {
-  switch(action.type) {
+export default function messageReducer(state = INITIAL_STATE, action) {
+  switch (action.type) {
     case UPDATE_MESSAGE:
     case BOT_MESSAGE:
       return { ...state, messages: [...state.messages, action.payload] };
