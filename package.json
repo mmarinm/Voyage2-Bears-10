@@ -36,14 +36,11 @@
     "compression": "^1.7.1",
     "concurrently": "^3.5.0",
     "express": "^4.16.1",
-<<<<<<< HEAD
     "nodemon": "^1.12.1",
-=======
     "husky": "^0.14.3",
     "lint-staged": "^4.2.3",
     "pm2": "^2.7.1",
     "prettier": "^1.7.4",
->>>>>>> 73b6a4f1ac61c3da4c2f8fd44df7a1ebee85fff6
     "socket.io": "^2.0.3"
   },
   "devDependencies": {

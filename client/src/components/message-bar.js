@@ -6,28 +6,23 @@ import { newUserMessage, newBotMessage } from '../actions';
 import { Form, FormControl, Button, Row, Col } from 'react-bootstrap';
 
 class MessageBar extends Component {
-  constructor(props) {
-    super(props);
+  state = { messageText: '' };
 
-    this.state = { messageText: '' };
-  }
-
-  handleChange = (event) => {
+  handleChange = event => {
     const newMessage = event.target.value;
     this.setState(prevState => ({ ...prevState, messageText: newMessage }));
-  }
+  };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     const { messageText } = this.state;
     e.preventDefault();
 
     //Send the message to the server
     sendMessageToServer(messageText);
-    this.setState({ messageText: '' });
 
     this.props.newUserMessage(messageText);
-    getBotMessage(msg => this.props.newBotMessage(msg));
-  }
+    this.setState({ messageText: '' });
+  };
 
   render() {
     return (
@@ -51,6 +46,6 @@ class MessageBar extends Component {
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ newUserMessage, newBotMessage }, dispatch);
-}
+};
 
 export default connect(null, mapDispatchToProps)(MessageBar);

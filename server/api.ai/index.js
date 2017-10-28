@@ -1,7 +1,6 @@
 const keys = require('../../config/keys');
 const apiai = require('apiai')(keys.APIAI_KEY);
 const actions = require('./actions');
-// process.env.APIAI_KEY;
 
 function processResponse(resp) {
   const { parameters, action } = resp.result;
