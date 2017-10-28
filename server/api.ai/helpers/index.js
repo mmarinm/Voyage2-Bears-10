@@ -1,49 +1,15 @@
-const keys = require('../../../config/keys.js');
 const moment = require('moment-timezone');
-const googleMapsClient = require('@google/maps').createClient({
-  key: keys.API_KEY,
-  Promise
-});
-
-function returnGeo(location) {
-  return new Promise(function(resolve, reject) {
-    googleMapsClient.geocode(
-      {
-        address: location
-      },
-      (err, data) => {
-        if (err) reject(err);
-        else resolve(data.json.results[0].geometry.location);
-      }
-    );
-  });
-}
-
-function returnTimezone(coords) {
-  return new Promise(function(resolve, reject) {
-    googleMapsClient.timezone(
-      {
-        location: {
-          lat: coords.lat.toFixed(4),
-          lng: coords.lng.toFixed(4)
-        },
-        timestamp: 1331766000
-      },
-      (err, data) => {
-        if (err) reject(err);
-        else resolve(data.json);
-      }
-    );
-  });
-}
+const googleHelp = require('./googleHelp');
 
 async function returnTime(location, tz, timeFormat) {
   let tzAtLocation;
 
   if (location) {
     try {
-      const cords = await returnGeo(location.city || location.country);
-      tzAtLocation = await returnTimezone(cords);
+      const cords = await googleHelp.returnGeo(
+        location.city || location.country
+      );
+      tzAtLocation = await googleHelp.returnTimezone(cords);
     } catch (error) {
       console.error(error);
     }
@@ -55,7 +21,5 @@ async function returnTime(location, tz, timeFormat) {
 }
 
 module.exports = {
-  returnTime,
-  returnTimezone,
-  returnGeo
+  returnTime
 };
