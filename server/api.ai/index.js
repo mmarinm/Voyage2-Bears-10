@@ -1,7 +1,7 @@
 const keys = require('../../config/keys');
 const apiai = require('apiai')(keys.APIAI_KEY);
 const moment = require('moment-timezone');
-const actions = require('./actions.js');
+const actions = require('./actions');
 
 function aiRequest(msg) {
   return new Promise((resolve, reject) => {

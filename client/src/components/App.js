@@ -1,57 +1,35 @@
 import React, { Component } from 'react';
 import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
 import '../App.css';
+import MessageContainer from '../containers/message-container';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { newUserMessage, newBotMessage } from '../actions';
+import MessageBar from './message-bar';
 
 class App extends Component {
   constructor() {
     super();
-
-    this.state = {
-      message: '',
-      messages: []
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    getBotMessage(msg =>
-      this.setState({ ...this.state, messages: [...this.state.messages, msg] })
-    );
-  }
-
-  handleChange(event) {
-    const newMessage = event.target.value;
-    this.setState(prevState => ({ ...prevState, message: newMessage }));
-  }
-
-  handleSubmit(e) {
-    const { message } = this.state;
-    e.preventDefault();
-    //Send the message to the server
-    sendMessageToServer(message);
-    this.setState(prevState => ({
-      ...prevState,
-      message: ''
-    }));
+    getBotMessage(msg => this.props.newBotMessage(msg));
   }
 
   render() {
+    console.log(this.props, 'props from action');
     return (
       <div>
-        <ul className="messages" />
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            value={this.state.message}
-            onChange={this.handleChange}
-          />
-          <button type="submit">Send</button>
-        </form>
+        <MessageContainer />
+        <MessageBar />
       </div>
     );
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  newUserMessage,
+  newBotMessage
+});
+
+export default connect(null, mapDispatchToProps)(App);

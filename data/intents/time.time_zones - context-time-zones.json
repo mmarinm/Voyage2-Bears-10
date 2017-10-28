@@ -1,0 +1,340 @@
+{
+  "id": "d224a6ae-d310-42b9-9d4c-b713be476561",
+  "name": "time.time_zones - context:time-zones",
+  "auto": true,
+  "contexts": ["time-zones"],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "time.time_zones",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "d0268f00-f7ff-4a11-b8b2-d64b652005ee",
+          "dataType": "@sys.location",
+          "name": "location",
+          "value": "$location",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508632949621,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "0c80c6a5-e0eb-4bf2-8b34-71de338c4a4f",
+      "data": [
+        {
+          "text": "what is",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "in",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "London",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 1,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "fbc09d89-49e8-4201-8065-0521cf670551",
+      "data": [
+        {
+          "text": "and what is",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "in",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "Paris",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "31202295-9f8a-4277-91d6-d4e0bfcb0f5b",
+      "data": [
+        {
+          "text": "also ",
+          "userDefined": false
+        },
+        {
+          "text": "in",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "Dresden",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "cff0df09-1add-4af5-86e2-5e4f8e29a7b2",
+      "data": [
+        {
+          "text": "in",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "Palo Alto",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": false
+        },
+        {
+          "text": " also",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "2db14a80-f814-4c2e-abfd-72f5196953a9",
+      "data": [
+        {
+          "text": "in ",
+          "userDefined": false
+        },
+        {
+          "text": "SF",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": false
+        },
+        {
+          "text": " as well",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "86ff8c34-57aa-4221-8f96-d57369ef4d0c",
+      "data": [
+        {
+          "text": "how ",
+          "userDefined": false
+        },
+        {
+          "text": "about",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "LA",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "c70531be-2819-41d9-b153-8cdf7521624c",
+      "data": [
+        {
+          "text": "in",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "Moscow",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": false
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "now",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "be388549-5626-400c-b36a-90ffe3f58b00",
+      "data": [
+        {
+          "text": "and in ",
+          "userDefined": false
+        },
+        {
+          "text": "Rome",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "2ab84c8b-3b8a-4183-a8e2-684d650ce9cf",
+      "data": [
+        {
+          "text": "what about ",
+          "userDefined": false
+        },
+        {
+          "text": "Pekin",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "23bcbe49-ab68-4279-b88d-54095480fe17",
+      "data": [
+        {
+          "text": "now ",
+          "userDefined": false
+        },
+        {
+          "text": "Moscow",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "0cb90fd0-0dff-4c8b-8cb5-982604cf7010",
+      "data": [
+        {
+          "text": "what's the situation in ",
+          "userDefined": false
+        },
+        {
+          "text": "Moscow",
+          "alias": "location",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}

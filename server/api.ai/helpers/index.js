@@ -1,9 +1,9 @@
 const keys = require('../../../config/keys.js');
+const moment = require('moment-timezone');
 const googleMapsClient = require('@google/maps').createClient({
   key: keys.API_KEY,
   Promise
 });
-const momentTimezone = require('moment-timezone');
 
 function returnGeo(location) {
   return new Promise(function(resolve, reject) {
@@ -37,22 +37,21 @@ function returnTimezone(coords) {
   });
 }
 
-async function returnTime(params) {
-  try {
-    const locationProperty = Object.getOwnPropertyNames(params.location);
-    const location = params.location[locationProperty];
-    let time;
-    {
-      let geo = await returnGeo(location);
-      let tz = await returnTimezone(geo);
-      time = momentTimezone()
-        .tz(tz.timeZoneId)
-        .format('LT');
+async function returnTime(location, tz, timeFormat) {
+  let tzAtLocation;
+
+  if (location) {
+    try {
+      const cords = await returnGeo(location.city || location.country);
+      tzAtLocation = await returnTimezone(cords);
+    } catch (error) {
+      console.error(error);
     }
-    return time;
-  } catch (err) {
-    console.error(err);
   }
+  const time = moment
+    .tz(tzAtLocation ? tzAtLocation.timeZoneId : tz)
+    .format(timeFormat);
+  return time;
 }
 
 module.exports = {
