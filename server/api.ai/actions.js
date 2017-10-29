@@ -1,4 +1,5 @@
-const { returnGeo, returnTimezone, returnTime } = require('./helpers');
+const { returnTime } = require('./helpers');
+const { returnGeo, returnTimezone } = require('./helpers/googleHelp');
 const moment = require('moment-timezone');
 
 const actions = {
@@ -18,6 +19,13 @@ const actions = {
     const { location } = pars;
 
     return returnTime(location, tz, 'h:mm a');
+  },
+
+  'time.time_zones': async (pars, tz) => {
+    const { location } = pars;
+    const geo = await returnGeo(location.city || location.country);
+    const timezone = await returnTimezone(geo);
+    return timezone.timeZoneName;
   }
 };
 
