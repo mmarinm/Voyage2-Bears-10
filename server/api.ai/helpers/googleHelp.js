@@ -4,7 +4,7 @@ const googleMapsClient = require('@google/maps').createClient({
   Promise
 });
 
-module.exports.returnGeo = function returnGeo(location) {
+const returnGeo = function returnGeo(location) {
   return new Promise(function(resolve, reject) {
     googleMapsClient.geocode(
       {
@@ -18,7 +18,7 @@ module.exports.returnGeo = function returnGeo(location) {
   });
 };
 
-module.exports.returnTimezone = function returnTimezone(coords) {
+const returnTimezone = function returnTimezone(coords) {
   return new Promise(function(resolve, reject) {
     googleMapsClient.timezone(
       {
@@ -34,4 +34,25 @@ module.exports.returnTimezone = function returnTimezone(coords) {
       }
     );
   });
+};
+
+const fetchTZforLocation = async location => {
+  let tzAtLocation;
+
+  if (location) {
+    try {
+      const cords = await returnGeo(location.city || location.country);
+      tzAtLocation = await returnTimezone(cords);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  const time = tzAtLocation ? tzAtLocation.timeZoneId : tz;
+  return time;
+};
+
+module.exports = {
+  returnGeo,
+  returnTimezone,
+  fetchTZforLocation
 };

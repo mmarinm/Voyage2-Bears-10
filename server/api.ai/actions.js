@@ -1,5 +1,9 @@
 const { returnTime } = require('./helpers');
-const { returnGeo, returnTimezone } = require('./helpers/googleHelp');
+const {
+  returnGeo,
+  returnTimezone,
+  fetchTZforLocation
+} = require('./helpers/googleHelp');
 const moment = require('moment-timezone');
 
 const actions = {
@@ -9,10 +13,32 @@ const actions = {
     return returnTime(location, tz, 'MMMM Do YYYY');
   },
 
-  'date.check': (pars, tz) => {
-    console.log('I am supposed to check date');
+  'date.check': async (pars, tz) => {
+    console.log(pars, tz);
+    const { location } = pars;
+    let now;
 
-    return 'yes';
+    //get date at param location
+    now = await returnTime(
+      location ? location : tz.split('/')[1],
+      tz,
+      'MMMM Do YYYY'
+    );
+    //get date at clients location
+    const date = moment.tz(pars.date, tz).format('MMMM Do YYYY');
+
+    console.log(date, 'date');
+    console.log(now, 'now');
+
+    console.log(date === now);
+
+    return date === now
+      ? `Yes, it's ${now}
+            ${location ? 'in ' + (location.city || location.country) : ''}
+            `
+      : `No, it's ${now}
+            ${location ? 'in ' + (location.city || location.country) : ''}
+            `;
   },
 
   'time.get': async (pars, tz) => {
