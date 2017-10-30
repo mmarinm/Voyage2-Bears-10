@@ -4,9 +4,14 @@ import { bindActionCreators } from 'redux';
 import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
 import { newUserMessage, newBotMessage } from '../actions';
 import { Form, FormControl, Button, Row, Col } from 'react-bootstrap';
+import moment from 'moment-timezone';
 
 class MessageBar extends Component {
-  state = { messageText: '' };
+  state = { messageText: '', tz: '' };
+
+  componentDidMount() {
+    this.setState(prevState => ({ ...prevState, tz: moment.tz.guess() }));
+  }
 
   handleChange = event => {
     const newMessage = event.target.value;
@@ -14,11 +19,11 @@ class MessageBar extends Component {
   };
 
   handleSubmit = e => {
-    const { messageText } = this.state;
+    const { messageText, tz } = this.state;
     e.preventDefault();
 
     //Send the message to the server
-    sendMessageToServer(messageText);
+    sendMessageToServer({ messageText, tz });
 
     this.props.newUserMessage(messageText);
     this.setState({ messageText: '' });

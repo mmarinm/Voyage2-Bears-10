@@ -19,11 +19,10 @@ const actions = {
     let now;
 
     //get date at param location
-    now = await returnTime(
-      location ? location : tz.split('/')[1],
-      tz,
-      'MMMM Do YYYY'
-    );
+    now = location
+      ? await returnTime(location, tz, 'MMMM Do YYYY')
+      : moment.tz(Date.now(), tz).format('MMMM Do YYYY');
+
     //get date at clients location
     const date = moment.tz(pars.date, tz).format('MMMM Do YYYY');
 
