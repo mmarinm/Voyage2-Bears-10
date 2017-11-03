@@ -16,7 +16,7 @@ class MessageContainer extends Component {
     )
   }
 
-  componentDidUpdate(currentProps, currentState) {
+  componentDidUpdate(currentProps, prevProps) {
     window.scrollTo(0, document.body.clientHeight);
   }
 

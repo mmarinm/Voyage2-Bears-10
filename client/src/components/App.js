@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import MessageBar from './message-bar';
 import MessageContainer from './message-container';
-import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
+import { getBotMessage } from '../API/WShelpers';
 import { newBotMessage } from '../actions';
 import '../App.css';
 
 
-export default class App extends Component {
+class App extends Component {
   componentDidMount() {
     getBotMessage(msg => this.props.newBotMessage(msg));
   }
@@ -21,3 +23,9 @@ export default class App extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ newBotMessage }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(App);

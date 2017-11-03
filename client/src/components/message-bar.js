@@ -24,7 +24,7 @@ class MessageBar extends Component {
 
     if (messageText !== '') {
       //Send the message to the server
-      sendMessageToServer(messageText);
+      //sendMessageToServer(messageText);
       this.setState({ messageText: '' });
 
       this.props.newUserMessage(messageText);
