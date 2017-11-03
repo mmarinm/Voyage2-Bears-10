@@ -19,6 +19,8 @@ form {
 .Message {
   color: white;
   border-radius: 10px;
+  max-width: 85%;
+  word-wrap: break-word;
   padding: 10px;
 }
 
