@@ -13,7 +13,6 @@ export function newUserMessage(messageText) {
 }
 
 export function newBotMessage(messageText) {
-  console.log(messageText, 'messageText from action');
   return {
     type: BOT_MESSAGE,
     payload: {
