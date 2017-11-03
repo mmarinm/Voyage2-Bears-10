@@ -18,12 +18,11 @@ function aiRequest(msg) {
   });
 }
 
-function processResponse(resp) {
+function processResponse(resp, clientTZ) {
   const { fulfillment, parameters, action } = resp.result;
-  // will parse time zone for the server location. In development it will work correctly,
-  // but in production this value has to come from the client
-  const TZ = moment.tz.guess();
-  fakeTZ = 'America/Los_Angeles';
+
+  //falback if geting TZ on client side failed
+  const TZ = clientTZ || moment.tz.guess();
 
   // fulfillment.speech is there just in default wellcome case
   if (fulfillment.speech) {
@@ -37,9 +36,10 @@ function processResponse(resp) {
 }
 
 const processMessage = async msg => {
+  const { messageText, tz } = msg;
   try {
-    const response = await aiRequest(msg);
-    return processResponse(response);
+    const response = await aiRequest(messageText);
+    return processResponse(response, tz);
   } catch (error) {
     console.error(error);
   }

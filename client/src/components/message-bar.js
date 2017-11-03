@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Button, Col, FormControl, Row } from 'react-bootstrap';
+import moment from 'moment-timezone';
 
 import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
 import { newUserMessage, newBotMessage } from '../actions';
@@ -10,20 +11,25 @@ class MessageBar extends Component {
   constructor() {
     super();
 
-    this.state = { messageText: '' };
+    this.state = { messageText: '', tz: '' };
   }
 
-  handleChange = e => {
-    this.setState({ messageText: e.target.value });
+  componentDidMount() {
+    this.setState(prevState => ({ tz: moment.tz.guess() }));
   }
+
+  handleChange = event => {
+      const newMessage = event.target.value;
+      this.setState(prevState => ({ ...prevState, messageText: newMessage }));
+    };
 
   handleSubmit = e => {
-    const { messageText } = this.state;
+    const { messageText, tz } = this.state;
     e.preventDefault();
 
     if (messageText !== '') {
       //Send the message to the server
-      //sendMessageToServer(messageText);
+      sendMessageToServer({ messageText, tz });
       this.setState({ messageText: '' });
 
       this.props.newUserMessage(messageText);
