@@ -1,15 +1,15 @@
 const moment = require('moment-timezone');
-const googleHelp = require('./googleHelp');
+const { returnGeo, returnTimezone } = require('./googleHelp');
 
 async function returnTime(location, tz, timeFormat) {
   let tzAtLocation;
 
   if (location) {
     try {
-      const cords = await googleHelp.returnGeo(
-        location.city || location.country
+      const cords = await returnGeo(
+        location.city || location.country || location
       );
-      tzAtLocation = await googleHelp.returnTimezone(cords);
+      tzAtLocation = await returnTimezone(cords);
     } catch (error) {
       console.error(error);
     }

@@ -15,7 +15,7 @@ class MessageBar extends Component {
   }
 
   componentDidMount() {
-    this.setState(prevState => ({ tz: moment.tz.guess() }));
+    this.setState(prevState => ({ ...prevState, tz: moment.tz.guess() }));
   }
 
   handleChange = event => {
@@ -30,10 +30,9 @@ class MessageBar extends Component {
     if (messageText !== '') {
       //Send the message to the server
       sendMessageToServer({ messageText, tz });
-      this.setState({ messageText: '' });
-
       this.props.newUserMessage(messageText);
       getBotMessage(msg => this.props.newBotMessage(msg));
+      this.setState({ messageText: '' });
     }
   }
 
