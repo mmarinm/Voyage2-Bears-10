@@ -18,7 +18,9 @@ const Message  = (props) =>  {
       <div style={{textAlign: isUserMessage ? 'right' : 'left'}}>
         {isUserMessage ? 'Sent' : 'Received'}: {timestamp.toLocaleTimeString()}
       </div>
-      <h4 className='Message' style={isUserMessage ? styleUser : styleBot}>{messageText}</h4>
+      <h4 className='Message' style={isUserMessage ? styleUser : styleBot}>
+        {messageText !== null ? messageText : "Hmm can't find anything, try something else"}
+      </h4>
     </Row>
   );
 }
