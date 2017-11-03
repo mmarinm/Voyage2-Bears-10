@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'test';
+console.log(process.env.NODE_ENV, 'enviroment');
 var chai = require('chai');
 const exec = require('mz/child_process').exec;
 const request = require('supertest-as-promised');
@@ -10,15 +12,15 @@ const server = require('../server');
 const processMessage = require('../server/api.ai');
 
 describe('server', function() {
-  // describe('builds application', function() {
-  //   it('builds to "build" directory', function() {
-  //     // Disable mocha time-out because this takes a lot of time
-  //     this.timeout(0);
+  describe('builds application', function() {
+    it('builds to "build" directory', function() {
+      // Disable mocha time-out because this takes a lot of time
+      this.timeout(0);
 
-  //     // Run process
-  //     return exec('npm run buildclient');
-  //   });
-  // });
+      // Run process
+      return exec('npm run buildclient');
+    });
+  });
 
   describe('express serving', function() {
     it('responds to / with the index.html', function() {

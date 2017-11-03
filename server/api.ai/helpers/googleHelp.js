@@ -1,11 +1,10 @@
-const keys = require('../../config/keys');
+const keys = require('../../../config/keys');
 const googleMapsClient = require('@google/maps').createClient({
   key: keys.API_KEY,
   Promise
 });
-const momentTimezone = require('moment-timezone');
 
-function returnGeo(location) {
+module.exports.returnGeo = function returnGeo(location) {
   return new Promise(function(resolve, reject) {
     googleMapsClient.geocode(
       {
@@ -17,8 +16,9 @@ function returnGeo(location) {
       }
     );
   });
-}
-function returnTimezone(coords) {
+};
+
+module.exports.returnTimezone = function returnTimezone(coords) {
   return new Promise(function(resolve, reject) {
     googleMapsClient.timezone(
       {
@@ -34,23 +34,4 @@ function returnTimezone(coords) {
       }
     );
   });
-}
-async function returnTime(params) {
-  try {
-    const locationProperty = Object.getOwnPropertyNames(params.location);
-    const location = params.location[locationProperty];
-    let time;
-    {
-      let geo = await returnGeo(location);
-      let tz = await returnTimezone(geo);
-      time = momentTimezone()
-        .tz(tz.timeZoneId)
-        .format('LT');
-    }
-    return time;
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-module.exports = returnTime;
+};

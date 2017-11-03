@@ -34,9 +34,10 @@
     "compression": "^1.7.1",
     "concurrently": "^3.5.0",
     "express": "^4.16.1",
+    "nodemon": "^1.12.1",
     "husky": "^0.14.3",
     "lint-staged": "^4.2.3",
-    "moment-timezone": "^0.5.13",
+    "moment": "^2.19.0",
     "pm2": "^2.7.1",
     "prettier": "^1.7.4",
     "socket.io": "^2.0.3"

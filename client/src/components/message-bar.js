@@ -7,18 +7,17 @@ import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
 import { newUserMessage, newBotMessage } from '../actions';
 
 class MessageBar extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = { messageText: '' };
   }
 
-  handleChange = (event) => {
-    const newMessage = event.target.value;
-    this.setState({ messageText: newMessage });
+  handleChange = e => {
+    this.setState({ messageText: e.target.value });
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     const { messageText } = this.state;
     e.preventDefault();
 

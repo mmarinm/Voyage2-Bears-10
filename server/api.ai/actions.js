@@ -1,15 +1,31 @@
-const returnTime = require('./timez');
+const { returnTime } = require('./helpers');
+const { returnGeo, returnTimezone } = require('./helpers/googleHelp');
+const moment = require('moment-timezone');
 
 const actions = {
-  'time.get': async function(params) {
-    const time = await returnTime(params);
-    return { result: time };
+  'date.get': (pars, tz) => {
+    const { location } = pars;
+
+    return returnTime(location, tz, 'MMMM Do YYYY');
   },
-  'default.welcome': function(params) {
-    return {
-      result:
-        'Hello! Welcome to TimeBot! You can say things like, " What time is it in Arizona?".'
-    };
+
+  'date.check': (pars, tz) => {
+    console.log('I am supposed to check date');
+
+    return 'yes';
+  },
+
+  'time.get': async (pars, tz) => {
+    const { location } = pars;
+
+    return returnTime(location, tz, 'h:mm a');
+  },
+
+  'time.time_zones': async (pars, tz) => {
+    const { location } = pars;
+    const geo = await returnGeo(location.city || location.country);
+    const timezone = await returnTimezone(geo);
+    return timezone.timeZoneName;
   }
 };
 

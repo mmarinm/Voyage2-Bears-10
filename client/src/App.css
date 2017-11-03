@@ -29,3 +29,12 @@ form {
 .MessageRow {
   margin: 15px 0;
 }
+
+.MessageContainer {
+  margin-bottom: 45px;
+}
+
+.Message {
+  padding: 10px;
+  border-radius: 10px;
+}

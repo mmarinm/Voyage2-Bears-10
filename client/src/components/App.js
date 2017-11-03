@@ -15,6 +15,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props, 'props from action');
     return (
       <div>
         <MessageContainer />
@@ -24,8 +25,6 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ newBotMessage }, dispatch);
-}
+const mapDispatchToProps = dispatch => { newBotMessage }
 
 export default connect(null, mapDispatchToProps)(App);
