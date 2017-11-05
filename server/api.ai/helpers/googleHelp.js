@@ -5,6 +5,7 @@ const googleMapsClient = require('@google/maps').createClient({
 });
 
 const returnGeo = function returnGeo(location) {
+  console.log('geolocation', location);
   return new Promise(function(resolve, reject) {
     googleMapsClient.geocode(
       {

@@ -13,11 +13,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getBotMessage(msg => this.props.newBotMessage(msg));
+    // getBotMessage(msg => this.props.newBotMessage(msg));
+    getBotMessage();
   }
 
   render() {
-    console.log(this.props, 'props from action');
+    console.log(this.props, 'props from app');
     return (
       <div>
         <MessageContainer />

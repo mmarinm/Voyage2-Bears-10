@@ -16,7 +16,7 @@ class MessageContainer extends Component {
   }
 
   render() {
-    console.log('TEST' + this.props.messages);
+    console.log('TEST', this.props);
     return (
       <Grid className="MessageContainer">
         {this.props.appState ? this.renderMessages() : ''}
