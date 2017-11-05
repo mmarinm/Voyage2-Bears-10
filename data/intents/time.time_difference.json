@@ -1,0 +1,560 @@
+{
+  "id": "d2096ee7-214a-4d95-b572-276e935c7c8a",
+  "name": "time.time_difference",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "time.time_difference",
+      "affectedContexts": [
+        {
+          "name": "time-difference",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "1a57163b-eb43-4c93-a4f3-c8b558e47a19",
+          "dataType": "@sys.location",
+          "name": "location-1",
+          "value": "$location-1",
+          "isList": false
+        },
+        {
+          "id": "350dc539-fb68-46f1-9982-785db64ebe5f",
+          "dataType": "@sys.location",
+          "name": "location-2",
+          "value": "$location-2",
+          "isList": false
+        },
+        {
+          "id": "b4f76fe8-ad1e-413c-945c-ab170c5280fe",
+          "dataType": "@time-zone",
+          "name": "zone-1",
+          "value": "$zone-1",
+          "isList": false
+        },
+        {
+          "id": "98275ce3-3196-4c30-9520-b98a20e6d829",
+          "dataType": "@time-zone",
+          "name": "zone-2",
+          "value": "$zone-2",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1508632949648,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "fde7deb1-2d07-4847-b200-5ba53e445e4d",
+      "data": [
+        {
+          "text": "find time difference ",
+          "userDefined": false
+        },
+        {
+          "text": "Paris",
+          "alias": "location-1",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "Milan",
+          "alias": "location-2",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "b78f97bf-7d1c-4d75-9dbf-6d390601e2fa",
+      "data": [
+        {
+          "text": "can",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " you find time difference between locations",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "88d7fce9-30da-4119-aa8d-a27fe58e3737",
+      "data": [
+        {
+          "text": "check time difference between ",
+          "userDefined": false
+        },
+        {
+          "text": "cities",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "5a83d366-c5f9-45b0-9931-574c62f8a9fc",
+      "data": [
+        {
+          "text": " show what's the time difference between time zones",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "e5834136-1ecf-46cd-87a2-fde288f06b0f",
+      "data": [
+        {
+          "text": "can you show what's the time difference between ",
+          "userDefined": false
+        },
+        {
+          "text": "COT",
+          "alias": "zone-1",
+          "meta": "@time-zone",
+          "userDefined": true
+        },
+        {
+          "text": " and ",
+          "userDefined": false
+        },
+        {
+          "text": "AFT",
+          "alias": "zone-2",
+          "meta": "@time-zone",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "90e9d549-0061-420d-a3c9-02479796bf46",
+      "data": [
+        {
+          "text": "find time difference for ",
+          "userDefined": false
+        },
+        {
+          "text": "me",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "42098b06-9c6a-4eb4-acfc-e3466771aa0f",
+      "data": [
+        {
+          "text": "check time difference",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "27666b27-2c57-4806-933f-a7e39254e5e7",
+      "data": [
+        {
+          "text": "how ",
+          "userDefined": false
+        },
+        {
+          "text": "many",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "hours",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " between ",
+          "userDefined": false
+        },
+        {
+          "text": "PST",
+          "alias": "zone-1",
+          "meta": "@time-zone",
+          "userDefined": true
+        },
+        {
+          "text": " and ",
+          "userDefined": false
+        },
+        {
+          "text": "UTC",
+          "alias": "zone-2",
+          "meta": "@time-zone",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "5eee95d6-feaa-4462-a810-830fc36d0745",
+      "data": [
+        {
+          "text": "tell ",
+          "userDefined": false
+        },
+        {
+          "text": "me",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "time",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " difference between ",
+          "userDefined": false
+        },
+        {
+          "text": "Singapore",
+          "alias": "location-1",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " and ",
+          "userDefined": false
+        },
+        {
+          "text": "Munich",
+          "alias": "location-2",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "08809884-9fec-496b-a568-acdc35241a31",
+      "data": [
+        {
+          "text": "what'",
+          "userDefined": false
+        },
+        {
+          "text": "s",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " the ",
+          "userDefined": false
+        },
+        {
+          "text": "time",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " difference between ",
+          "userDefined": false
+        },
+        {
+          "text": "COT",
+          "alias": "zone-1",
+          "meta": "@time-zone",
+          "userDefined": true
+        },
+        {
+          "text": " and ",
+          "userDefined": false
+        },
+        {
+          "text": "AFT",
+          "alias": "zone-2",
+          "meta": "@time-zone",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "a3cd299c-3eed-497d-966d-2567bf3377ca",
+      "data": [
+        {
+          "text": "how ",
+          "userDefined": false
+        },
+        {
+          "text": "many",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "hours",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is ",
+          "userDefined": false
+        },
+        {
+          "text": "it",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " between ",
+          "userDefined": false
+        },
+        {
+          "text": "PST",
+          "alias": "zone-1",
+          "meta": "@time-zone",
+          "userDefined": true
+        },
+        {
+          "text": " and ",
+          "userDefined": false
+        },
+        {
+          "text": "UTC",
+          "alias": "zone-2",
+          "meta": "@time-zone",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "7687016b-c7c9-4cdf-8b2e-f36d01a2e24a",
+      "data": [
+        {
+          "text": "time difference between ",
+          "userDefined": false
+        },
+        {
+          "text": "Moscow",
+          "alias": "location-1",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " and ",
+          "userDefined": false
+        },
+        {
+          "text": "London",
+          "alias": "location-2",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "ec3e3f57-8277-4e31-b245-a47a082adff2",
+      "data": [
+        {
+          "text": "time difference ",
+          "userDefined": false
+        },
+        {
+          "text": "Tokyo",
+          "alias": "location-1",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " and ",
+          "userDefined": false
+        },
+        {
+          "text": "New York",
+          "alias": "location-2",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "0c53b9fd-a5eb-49a4-8a00-664fb8870df7",
+      "data": [
+        {
+          "text": "Dresden",
+          "alias": "location-1",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " and ",
+          "userDefined": false
+        },
+        {
+          "text": "New York",
+          "alias": "location-2",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " time difference",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "1dbe7c22-ad32-47fa-b242-448ddb00b83e",
+      "data": [
+        {
+          "text": "time difference",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "a7056669-cbb2-4fa1-8aee-d2aac2d37b2a",
+      "data": [
+        {
+          "text": "what is the time difference between ",
+          "userDefined": false
+        },
+        {
+          "text": "Tokyo",
+          "alias": "location-1",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " and ",
+          "userDefined": false
+        },
+        {
+          "text": "Berlin",
+          "alias": "location-2",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    },
+    {
+      "id": "108043f7-3b3b-490c-9eec-9b9dac170943",
+      "data": [
+        {
+          "text": "tell me the time difference between ",
+          "userDefined": false
+        },
+        {
+          "text": "Amsterdam",
+          "alias": "location-1",
+          "meta": "@sys.location",
+          "userDefined": true
+        },
+        {
+          "text": " and ",
+          "userDefined": false
+        },
+        {
+          "text": "London",
+          "alias": "location-2",
+          "meta": "@sys.location",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}

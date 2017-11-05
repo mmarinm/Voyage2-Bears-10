@@ -16,30 +16,27 @@ form {
   width: 100%;
 }
 
-form input {
-  border: 0;
-  padding: 10px;
-  width: 90%;
-  margin-right: 0.5%;
-}
-
-form button {
-  width: 9%;
-  background: rgb(130, 224, 255);
-  border: none;
+.Message {
+  color: white;
+  border-radius: 10px;
+  max-width: 85%;
+  word-wrap: break-word;
   padding: 10px;
 }
 
-.messages {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.MessageContainer {
+  margin-bottom: 40px;
 }
 
-.messages li {
-  padding: 5px 10px;
+.MessageRow {
+  margin: 15px 0;
 }
 
-.messages li:nth-child(odd) {
-  background: #eee;
+.MessageContainer {
+  margin-bottom: 45px;
+}
+
+.Message {
+  padding: 10px;
+  border-radius: 10px;
 }
