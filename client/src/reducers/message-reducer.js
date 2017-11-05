@@ -1,4 +1,4 @@
-import { UPDATE_MESSAGE, BOT_MESSAGE } from '../actions';
+import { USER_MESSAGE, BOT_MESSAGE } from '../actions';
 
 const INITIAL_STATE = {
   messages: [
@@ -8,18 +8,18 @@ const INITIAL_STATE = {
       isUserMessage: false
     },
     {
-      messageText: 'Ask me about the time!',
+      messageText: 'Ask me to do stuff!',
       timestamp: new Date(),
       isUserMessage: false
-    }
+    },
   ]
-};
+}
 
-export default function messageReducer(state = INITIAL_STATE, action) {
-  switch (action.type) {
-    case UPDATE_MESSAGE:
+export default function messageReducer(state=INITIAL_STATE, action) {
+  switch(action.type) {
+    case USER_MESSAGE:
     case BOT_MESSAGE:
-      return { ...state, messages: [...state.messages, action.payload] };
+      return { ...state, messages: [...state.messages, action.payload] }
     default:
       return state;
   }

@@ -11,11 +11,9 @@
     "client": "npm run start --prefix client",
     "buildclient": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "mocha test/*",
-    "pm2:dev":
-      "pm2 start ecosystem-dev.config.js --env development && pm2 logs",
-    "pm2:prod":
-      "npm run build:client && pm2 start ecosystem-prod.config.js --env production",
+    "test": "NODE_ENV=test && mocha test/*",
+    "pm2:dev": "pm2 start ecosystem-dev.config.js --env development && pm2 logs",
+    "pm2:prod": "npm run build:client && pm2 start ecosystem-prod.config.js --env production",
     "pm2:stop": "pm2 delete all",
     "pm2:monitor": "pm2 monit",
     "logs:clear": "pm2 flush"
@@ -53,6 +51,9 @@
     "supertest-as-promised": "^4.0.2"
   },
   "lint-staged": {
-    "**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
+    "**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   }
 }

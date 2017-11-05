@@ -16,37 +16,20 @@ form {
   width: 100%;
 }
 
-/*.form-control {
-  display: inline-block;
-  width: 75%;
-}
-
-form input {
-  border: 0;
+.Message {
+  color: white;
+  border-radius: 10px;
+  max-width: 85%;
+  word-wrap: break-word;
   padding: 10px;
-  width: 90%;
-  margin-right: 0.5%;
 }
 
-form button {
-  width: 24%;
-  background: rgb(130, 224, 255);
-  border: none;
-  padding: 10px;
-}*/
-
-.messages {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.MessageContainer {
+  margin-bottom: 40px;
 }
 
-.messages li {
-  padding: 5px 10px;
-}
-
-.messages li:nth-child(odd) {
-  background: #eee;
+.MessageRow {
+  margin: 15px 0;
 }
 
 .MessageContainer {

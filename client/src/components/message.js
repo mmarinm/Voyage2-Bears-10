@@ -3,25 +3,26 @@ import { Row } from 'react-bootstrap';
 
 const styleUser = {
   float: 'right',
-  background: '#cccccc'
-};
-const styleBot = {
-  float: 'left',
-  background: '#999999'
+  background: 'blue'
 };
 
-const Message = props => {
+const styleBot = {
+  float: 'left',
+  background: 'red'
+};
+
+const Message  = (props) =>  {
   const { messageText, isUserMessage, timestamp } = props.data;
   return (
-    <Row>
-      <div style={{ textAlign: isUserMessage ? 'right' : 'left' }}>
+    <Row className='MessageRow'>
+      <div style={{textAlign: isUserMessage ? 'right' : 'left'}}>
         {isUserMessage ? 'Sent' : 'Received'}: {timestamp.toLocaleTimeString()}
       </div>
-      <h3 className="Message" style={isUserMessage ? styleUser : styleBot}>
-        {messageText}
-      </h3>
+      <h4 className='Message' style={isUserMessage ? styleUser : styleBot}>
+        {messageText !== null ? messageText : "Hmm can't find anything, try something else"}
+      </h4>
     </Row>
   );
-};
+}
 
 export default Message;

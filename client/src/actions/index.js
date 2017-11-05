@@ -1,9 +1,9 @@
-export const UPDATE_MESSAGE = 'UPDATE_MESSAGE';
-export const BOT_MESSAGE = 'BOT_MESSAGE';
+export const USER_MESSAGE = 'USER_MESSAGE';
+export const BOT_MESSAGE = 'BOT_MESSAGE'
 
 export function newUserMessage(messageText) {
   return {
-    type: UPDATE_MESSAGE,
+    type: USER_MESSAGE,
     payload: {
       messageText,
       timestamp: new Date(),
