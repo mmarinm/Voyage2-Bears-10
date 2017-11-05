@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
-import { newUserMessage, newBotMessage } from '../actions';
-import { Form, FormControl, Button, Row, Col } from 'react-bootstrap';
+import { Button, Col, FormControl, Row } from 'react-bootstrap';
 import moment from 'moment-timezone';
 
+import { sendMessageToServer, getBotMessage } from '../API/WShelpers';
+import { newUserMessage } from '../actions';
+
 class MessageBar extends Component {
-  state = { messageText: '', tz: '' };
+  constructor() {
+    super();
+
+    this.state = { messageText: '', tz: '' };
+  }
 
   componentDidMount() {
     this.setState(prevState => ({ ...prevState, tz: moment.tz.guess() }));
@@ -22,16 +27,17 @@ class MessageBar extends Component {
     const { messageText, tz } = this.state;
     e.preventDefault();
 
-    //Send the message to the server
-    sendMessageToServer({ messageText, tz });
-
-    this.props.newUserMessage(messageText);
-    this.setState({ messageText: '' });
+    if (messageText !== '') {
+      //Send the message to the server
+      sendMessageToServer({ messageText, tz });
+      this.props.newUserMessage(messageText);
+      this.setState({ messageText: '' });
+    }
   };
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <Row>
           <Col xs={9} sm={10} lg={11}>
             <FormControl
@@ -41,16 +47,18 @@ class MessageBar extends Component {
             />
           </Col>
           <Col xs={3} sm={2} lg={1}>
-            <Button type="submit">Send</Button>
+            <Button type="submit" bsStyle="info" block>
+              Send
+            </Button>
           </Col>
         </Row>
-      </Form>
+      </form>
     );
   }
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ newUserMessage, newBotMessage }, dispatch);
+  return bindActionCreators({ newUserMessage }, dispatch);
 };
 
 export default connect(null, mapDispatchToProps)(MessageBar);

@@ -11,7 +11,7 @@
     "client": "npm run start --prefix client",
     "buildclient": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "mocha test/*",
+    "test": "NODE_ENV=test && mocha test/*",
     "pm2:dev":
       "pm2 start ecosystem-dev.config.js --env development && pm2 logs",
     "pm2:prod":
